@@ -71,7 +71,7 @@
     <label for="service"> Add Service(s):</label>
     <form action="/action_page.php">
       <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="check1" name="service[]" value="something" checked>
+        <input type="checkbox" class="form-check-input" id="check1" name="service[]" value="something">
         <label class="form-check-label" for="check1">Health Protocol/Rp25.000</label>
       </div>
       <div class="form-check">
