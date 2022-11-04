@@ -55,7 +55,8 @@
 
   <div class="form-group">
   <label for="jenis_mobil">Car Type</label>
-    <select name="jenis_mobil" class="form-select" aria-label="Default select example" onchange="priceFunction()" id="jenis_mobil">
+    <select name="jenis_mobil" class="form-select" id="jenis_mobil">
+      <option selected disabled>Pilih Jenis Mobil</option>
       <option value="Pickup">Pickup</option>
       <option value="Avanza">Avanza</option>
       <option value="Fortuner">Fortuner</option>
@@ -76,11 +77,11 @@
       </div>
       <div class="form-check">
         <input type="checkbox" class="form-check-input" id="check2" name="service[]" value="something">
-        <label class="form-check-label" for="check2">Driver / Rp100.000</label>
+        <label class="form-check-label" for="check2">Driver/Rp100.000</label>
       </div>
       <div class="form-check">
         <input type="checkbox" class="form-check-input" id="check3" name="service[]" value="something">
-        <label class="form-check-label" for="check3">Fuel filled / Rp250.000</label>
+        <label class="form-check-label" for="check3">Fuel filled/Rp250.000</label>
       </div>
     </form>
     <div class="d-grid gap-2" style="margin-top : 20px;">

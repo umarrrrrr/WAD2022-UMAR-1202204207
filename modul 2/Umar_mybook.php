@@ -7,6 +7,7 @@ $time = $_POST['time'];
 $duration = $_POST['duration'];
 $jenis_mobil = $_POST['jenis_mobil'];
 $num = $_POST['num'];
+$service = $_POST['service'];
 
 $checkin = date('d-m-Y H:i:s', strtotime("$date $time"));
 
@@ -66,7 +67,7 @@ $checkout = date('d-m-Y H:i:s', strtotime("$date $timecheckout"));
         <td><?php echo $checkout?></td>
         <td><?php echo $jenis_mobil?></td>
         <td><?php echo $num?></td>
-        <td><?php echo $for_query?></td>
+        <td><?php echo $service?></td>
         <td><?php echo $total?></td>
       </tr>
     </tbody>
