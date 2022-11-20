@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3308
--- Generation Time: Nov 20, 2022 at 11:22 AM
+-- Generation Time: Nov 20, 2022 at 03:00 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -37,6 +37,13 @@ CREATE TABLE `showroom_umar_table` (
   `foto_mobil` varchar(255) NOT NULL,
   `status_pembayaran` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `showroom_umar_table`
+--
+
+INSERT INTO `showroom_umar_table` (`id_mobil`, `nama_mobil`, `pemilik_mobil`, `merk_mobil`, `tanggal_beli`, `deskripsi`, `foto_mobil`, `status_pembayaran`) VALUES
+(534347956, '1', 'Umar_1202204207', '1', '0000-00-00', 'awjdhawduawnikjdkhiebusjksh', '', 'fortuner.jpeg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
