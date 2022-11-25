@@ -43,15 +43,15 @@
     <br><br>
     
     <?php
-    while ($query = mysqli_fetch_array($ambil)){ ?>
+    while ($dataa = mysqli_fetch_array($ambil)){ ?>
       <br/>
   <div class="row">
   <div class="col-sm-4">
     <div class="card">
-    <img src="../asset/images/<?php echo $query['foto_mobil'];?>" class="card-img-top img-fluid">
+    <img src="../asset/images/<?php echo $dataa['foto_mobil'];?>" class="card-img-top img-fluid">
       <div class="card-body">
-        <h5 class="card-title"><?= $query['nama_mobil'];?></h5>
-        <p class="card-text"><?= $deskripsiMobil = $query['deskripsi'];
+        <h5 class="card-title"><?= $dataa['nama_mobil'];?></h5>
+        <p class="card-text"><?= $deskripsiMobil = $dataa['deskripsi'];
         echo $deskripsiMobil;?></p>
         <a href="Detail-Umar.php?id_mobil=<?php echo $query['id_mobil']; ?>" class="btn btn-primary">Detail</a>
         <a href="delete.php?id_mobil=<?php echo $query['id_mobil']; ?>" class="btn btn-danger" name="id">Delete</a>
