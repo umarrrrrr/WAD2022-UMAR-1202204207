@@ -11,18 +11,26 @@
 <?php
     include('..\config\connector.php');
     $query = mysqli_query($conn,"SELECT id_mobil FROM `showroom_umar_table`");
-    $itung = mysqli_num_rows($query);
+    $jumlah = mysqli_num_rows($query);
 
     $ambil = mysqli_query($conn, "SELECT * FROM `showroom_umar_table`");
     ?>
+
 <nav class="navbar navbar-expand-lg bg-primary justify-content-sm-center font-color:white">
   <div class="container-fluid">
     <div class="collapse navbar-collapse">
       <div class="navbar-nav">
         <a class="nav-link text-white" style="padding-left:100px"; aria-current="page" href="../pages/Home-Umar.php">Home</a>
-        <a class="nav-link text-white" aria-current="page" href="../pages/ListCar-Umar.php">MyCar</a>
+        <?php
+        if ($jumlah == 0){
+          echo '<a class="nav-link text-white" href=".\pages\Add-Umar.php">My Car</a>';
+        }
+        else{ 
+          echo '<a class="nav-link text-white" href=".\pages\ListCar-Umar.php">My Car</a>';
+        }
+        ?>
       </div>
-      <button class="btn btn-light" style="width:150px;" href="../pages/Add-Umar.php">Add Car</button>
+      <button class="btn btn-light" style="width:150px;" href="..\pages/Add-Umar.php">Add Car</button>
     </div>
   </div>
 </nav>
@@ -33,39 +41,27 @@
     <br>
     <div class="p">List Show Room Umar_1202204207</div>
     <br><br>
-
+    
+    <?php
+    while ($query = mysqli_fetch_array($ambil)){ ?>
+      <br/>
   <div class="row">
   <div class="col-sm-4">
     <div class="card">
-    <img src="../asset/images/fortuner.jpeg" class="card-img-top img-fluid">
+    <img src="../asset/images/<?php echo $query['foto'];?>" class="card-img-top img-fluid">
       <div class="card-body">
-        <h5 class="card-title">Toyota Fortuner</h5>
-        <p class="card-text">mobil ini mau dijual nantinya</p>
-        <a href="Umar_ItemDetail.php" class="btn btn-primary">Detail</a>
+        <h5 class="card-title"><?= $query['nama_mobil'];?></h5>
+        <p class="card-text"><?= $deskripsiMobil = $query['deskripsi'];
+        echo $deskripsiMobil;?></p>
+        <a href="./Detail-Umar.php" class="btn btn-primary">Detail</a>
         <a href="#" class="btn btn-danger">Delete</a>
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div class="card">
-    <img src="../asset/images/fortuner.jpeg" class="card-img-top img-fluid">
-      <div class="card-body">
-        <h5 class="card-title">Toyota Fortuner</h5>
-        <p class="card-text">mobil ini mau dijual nantinya</p>
-        <a href="Umar_ItemDetail.php" class="btn btn-primary">Detail</a>
-        <a href="#" class="btn btn-danger">Delete</a>
-      </div>
-    </div>
   </div>
-  <div class="col-sm-4">
-    <div class="card">
-    <img src="../asset/images/fortuner.jpeg" class="card-img-top img-fluid">
-      <div class="card-body">
-        <h5 class="card-title">Toyota Fortuner</h5>
-        <p class="card-text">mobil ini mau dijual nantinya</p>
-        <a href="Umar_ItemDetail.php" class="btn btn-primary">Detail</a>
-        <a href="#" class="btn btn-danger">Delete</a>
-      </div>
-    </div>
-  </div>
+  <?php
+    }
+  ?>
 </div>
+</div>
+</body>

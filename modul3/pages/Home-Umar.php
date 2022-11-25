@@ -11,7 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     
     <?php
-    include('..\config\connector.php');
+    include('.\config\connector.php');
     $query = mysqli_query($conn,"SELECT id_mobil FROM `showroom_umar_table`");
     $jumlah = mysqli_num_rows($query);
     
@@ -25,13 +25,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link text-white" style="padding-left:100px;" aria-current="page" href="">Home</a>
+        <a class="nav-link text-white" style="padding-left:100px;" aria-current="page" href="./pages/index.php">Home</a>
         <?php
         if ($jumlah == 0){
-          echo '<a class="nav-link text-white" href=".\Add-Umar.php">My Car</a>';
+          echo '<a class="nav-link text-white" href="./pages/Add-Umar.php">My Car</a>';
         }
         else{ 
-          echo '<a class="nav-link text-white" href=".\ListCar-Umar.php">My Car</a>';
+          echo '<a class="nav-link text-white" href="./pages/ListCar-Umar.php">My Car</a>';
         }
         ?>
       </div>
@@ -54,10 +54,10 @@
         }
         ?>
     <br><br><br>
-    <img src="../asset/images/Logo.png"> &nbsp;&nbsp;<a>Umar_1202204207</a>
+    <img src="./asset/images/Logo.png"> &nbsp;&nbsp;<a>Umar_1202204207</a>
     </div>
     <div class="col">
-    <img src="../asset/images/pickup.jpeg" class="card-img-top" style="width: 35rem;" align="right">
+    <img src="./asset/images/pickup.jpeg" class="card-img-top" style="width: 35rem;" align="right">
     </div>
 
 </body>

@@ -10,6 +10,13 @@
 <style>
 </style>
 <body>
+<?php
+
+
+  include('../config/connector.php');
+  $getData = mysqli_query($conn,"SELECT * FROM `showroom_umar_table`");
+  $jumlahData = mysqli_num_rows($getData);
+  ?>
 
 <nav class="navbar navbar-expand-lg bg-primary">
   <div class="container-fluid">
@@ -19,8 +26,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-      <a class="nav-link text-white" style="padding-left:100px;" aria-current="page" href="../pages/Home-Umar.php">Home</a>
-        <a class="nav-link text-white" aria-current="page" href="../pages/ListCar-Umar.php">MyCar</a>
+      <a class="nav-link text-white" style="padding-left:100px;" aria-current="page" href="./pages/Home-Umar.php">Home</a>
+        <a class="nav-link text-white" aria-current="page" href="./pages/ListCar-Umar.php">MyCar</a>
       </div>
     </div>
   </div>
@@ -36,43 +43,43 @@
     </div>
     <div class="row ">
         <div class="col-md">
-        <img src="../asset/images/pickup.jpeg" class="card-img-top" style="width: 35rem;" align="right">
+        <img src="../asset/images/<?php echo $jumlahData['foto_mobil'];?>" class="card-img-top rounded" alt="mobil" width="Automatic" height="310" >
         </div>
 
       <div class="col">
         <form method="post" action="" enctype="multipart/form-data">
-          <label class="pb-2" for="judul"><b>Nama Mobil</b></label>
-          <input type="text" class="form-control" id="mobil" name="mobil" placeholder="Pickup">
+          <label class="pb-2" for="exampleInputEmail1"><b>Nama Mobil</b></label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           <br>
 
-          <label class="pb-2" for="penulis"><b>Nama Pemilik</b></label>
-          <input type="text" class="form-control" id="pemilik" name="pemilik" value="Nama-NIM" readonly>
+          <label class="pb-2" for="exampleInputEmail1"><b>Nama Pemilik</b></label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           <br>
 
-          <label class="pb-2" for="thn_terbit"><b>Merk</b></label>
-          <input type="text" class="form-control" id="merk" name="merk" placeholder="Mitsubishi" >
+          <label class="pb-2" for="exampleInputEmail1"><b>Merk</b></label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           <br>
 
-          <label class="pb-2" for="thn_terbit"><b>Tanggal Beli</b></label>
-          <input type="text" class="form-control" id="tanggal" name="tanggal"placeholder="11/12/2022" >
+          <label class="pb-2" for="exampleInputEmail1"><b>Tanggal Beli</b></label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           <br>
 
-          <label for="deskripsi" class="form-label"><b>Deskripsi</b></label>
-          <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+          <label for="exampleInputEmail1" class="form-label"><b>Deskripsi</b></label>
+          <textarea class="form-control border border-3" id="exampleFormControlTextarea1" rows="3"></textarea>
 
             <div class="pt-3">
-              <label for="gambar" class="form-label"><b>Foto</b></label>
-              <input class="form-control" type="file" id="gambar" name="gambar" placeholder="Pickup.png" required>
+              <label for="exampleInputEmail1" class="form-label"><b>Foto</b></label>
+              <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
           <br>
 
-            <label  class="form-label pl-1"><b>Status Pembayaran</b></label>
+            <label  for="exampleInputEmail1" class="form-label pl-1"><b>Status Pembayaran</b></label>
             <br>
-            <input type="radio" id="lunas" name="status" value="lunas">
-            <label for="Indonesia">&nbsp;Lunas</label>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              <label for="inlineRadio1">&nbsp;Lunas</label>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="radio" id="belum" name="status" value="belum">
-            <label for="lainnya">&nbsp;Belum Lunas</label>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              <label for="inlineRadio2">&nbsp;Belum Lunas</label>
             <br><br>
             <button type="submit" name="submit" class="btn btn-primary" style= "width:200px">Simpan</button>
 </div>
