@@ -13,7 +13,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
   <?php
-  include('..\config\connector.php');
+  include('../config/connector.php');
   $query = mysqli_query($conn,"SELECT id_mobil FROM `showroom_umar_table`");
   $jumlah = mysqli_num_rows($query);
     
@@ -75,16 +75,16 @@
 
             <div class="pt-3">
               <label for="foto_mobil" class="form-label"><b>Foto</b></label>
-              <input class="form-control" type="file" id="foto_mobil" name="foto_mobil" placeholder="Pickup.png" required>
+              <input class="form-control" type="file" id="foto_mobil" name="foto_mobil" placeholder="Pickup.png">
             </div>
           <br>
 
             <label  class="form-label pl-1"><b>Status Pembayaran</b></label>
             <br>
-            <input type="radio" id="statusbayar" name="statusbayar" value="lunas">
+            <input type="radio" id="status_pembayaran" name="status_pembayaran" value="lunas">
             <label for="Indonesia">&nbsp;Lunas</label>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="radio" id="statusbelum" name="statusbayar" value="belum">
+            <input type="radio" id="statusbelum" name="status_pembayaran" value="belum">
             <label for="lainnya">&nbsp;Belum Lunas</label>
             <br><br>
 

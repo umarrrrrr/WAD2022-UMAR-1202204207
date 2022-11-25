@@ -46,13 +46,13 @@
     <div class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus corrupti quibusdam quis repudiandae temporibus, ad natus. Esse perspiciatis sint totam eveniet minus nam harum ex iste. Laborum reprehenderit, iste commodi quis assumenda ut.</div>
     <br>
     <?php
-        if ($jumlah == 0){
-          echo '<button type="button" class="btn btn-primary" href=".\Add-Umar.php">My Car</button>';
-        }
-        else{ 
-          echo '<button type="button" class="btn btn-primary" href=".\ListCar-Umar.php">My Car</button>';
-        }
-        ?>
+        if ($jumlah == 0) {
+      echo '<a class="nav-link active btn btn-primary" type="button" href="pages/Add-Umar.php">MyCar</a>';
+      } else {
+      echo '<a class="nav-link active btn btn-primary" type="button"href="pages/ListCar-Umar.php">MyCar</a>';
+      }
+      
+      ?>
     <br><br><br>
     <img src="./asset/images/Logo.png"> &nbsp;&nbsp;<a>Umar_1202204207</a>
     </div>

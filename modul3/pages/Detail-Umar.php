@@ -24,30 +24,26 @@
   </div>
 </nav>
 
-
-  <div class="container">
-    <div class="row pt-5">
-    <div class="p"><h2>(Nama Mobil)</h></div>
-    <br>
-    <div class="p">Detail (Nama Mobil)</div>
-    <br><br>
-    </div>
-    
-    <?php
+<?php
 
 include('../config/connector.php');
-
-
-// include('../config/connector.php');
 
 $id = $_GET['id_mobil'];
 $getData = mysqli_query($conn,"SELECT * FROM showroom_umar_table WHERE id_mobil = $id");
 $jumlahData = mysqli_num_rows($getData);
 $detailMobil = mysqli_fetch_array($getData) or die("line 50 not working");
 $foto = $detailMobil['foto_mobil'];
-// echo $detailMobil['foto_mobil'];
 
 ?>
+
+  <div class="container">
+    <div class="row pt-5">
+    <div class="p"><h2><?= $detailMobil['nama_mobil'];?></h></div>
+    <br>
+    <div class="p">Detail <?= $detailMobil['nama_mobil'];?></div>
+    <br><br>
+    </div>
+    
       <div class="row ">
         <div class="col-md">
         <img src="../asset/images/pickup.jpeg" class="card-img-top" style="width: 35rem;" align="right">
@@ -55,37 +51,37 @@ $foto = $detailMobil['foto_mobil'];
 
         <div class="col-lg">
           <form method="post" action="" enctype="multipart/form-data">
-            <label class="pb-2" for="judul"><b>Nama Mobil</b></label>
+            <label class="pb-2" for="exampleInputEmail1"><b>Nama Mobil</b></label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $detailMobil['nama_mobil'];?>">
             <br>
 
-            <label class="pb-2" for="penulis"><b>Nama Pemilik</b></label>
+            <label class="pb-2" for="exampleInputEmail1"><b>Nama Pemilik</b></label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $detailMobil['pemilik_mobil'];?>">
             <br>
 
-            <label class="pb-2" for="thn_terbit"><b>Merk</b></label>
+            <label class="pb-2" for="exampleInputEmail1"><b>Merk</b></label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $detailMobil['merk_mobil'];?>">
             <br>
 
-            <label class="pb-2" for="thn_terbit"><b>Tanggal Beli</b></label>
+            <label class="pb-2" for="exampleInputEmail1"><b>Tanggal Beli</b></label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $detailMobil['tanggal_beli'];?>">
             <br>
 
-            <label for="deskripsi" class="form-label"><b>Deskripsi</b></label>
+            <label for="exampleInputEmail1" class="form-label"><b>Deskripsi</b></label>
             <textarea class="form-control border border-3" id="exampleFormControlTextarea1" rows="3" ><?= $detailMobil['deskripsi'];?></textarea>
 
               <div class="pt-3">
-                <label for="gambar" class="form-label"><b>Foto</b></label>
+                <label for="exampleInputEmail1" class="form-label"><b>Foto</b></label>
                 <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $detailMobil['foto_mobil'];?>">
               </div>
             <br>
 
               <label  class="form-label pl-1"><b>Status Pembayaran</b></label>
             <br>
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="<?= $detailMobil['statusbayar'];?>">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="<?= $detailMobil['status_pembayaran'];?>">
             <label for="Indonesia">&nbsp;Lunas</label>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="<?= $detailMobil['statusbayar'];?>">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="<?= $detailMobil['status_pembayaran'];?>">
             <label for="lainnya">&nbsp;Belum Lunas</label>
             <br><br>
 
