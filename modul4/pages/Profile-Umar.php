@@ -24,14 +24,8 @@
         <li class="nav-item">
           <a class="nav-link" href="#" style="padding-right:1030px";>MyCar</a>
         </li>
-        <li class="nav-item dropdown" style="padding-left:30px;">
-          <a class="btn btn-light nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Profil
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Log Out</a></li>
-          </ul>
+        <li class="nav-item" style="padding-left:30px;">
+            <a class="nav-link" href="../config/logout.php">Log Out</a>
         </li>
       </ul>
     </div>
