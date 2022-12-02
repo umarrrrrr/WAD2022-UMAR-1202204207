@@ -1,7 +1,3 @@
-<?php
-include '../config/connector.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +8,12 @@ include '../config/connector.php';
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+  <?php
+    include_once('..\config\connector.php');
+    $query = mysqli_query($connect,"SELECT email FROM `users`");
+    $jumlah = mysqli_num_rows($query);
+    $ambil = mysqli_query($connect, "SELECT * FROM `users`");
+  ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
   <div class="container-fluid px-5">
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -22,46 +24,48 @@ include '../config/connector.php';
         <li class="nav-item">
           <a class="nav-link" href="#" style="padding-right:1030px";>MyCar</a>
         </li>
-        <li class="btn btn-light" style="font-color:blue" href="Add-Umar.php" role="button">Add car
-        </li>
         <li class="nav-item dropdown" style="padding-left:30px;">
           <a class="btn btn-light nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            (nama)
+            Profil
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Log Out</a></li>
           </ul>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
     <form>
       <h1 align="center" style="padding-top:30px;">Profile</h1>
+      <?php
+    $isi = mysqli_fetch_array($ambil);
+        ?>
     <div class="container">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $isi['email'];?>"readonly>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Nama</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <input type="form" class="form-control" id="exampleInputPassword1" value="<?php echo $isi['nama'];?>" readonly>
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Nomor Handphone</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" required>
+            <label for="exampleInputPassword1" class="form-label">No Handphone</label>
+            <input type="form" class="form-control" id="exampleInputPassword1" value="<?php echo $isi['no_hp'];?>" readonly>
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Kata Sandi</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" required>
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" value="<?php echo $isi['password'];?>" readonly>
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Konfirmasi Kata Sandi</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" class="form-label">Konfirmasi Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" value="<?php echo $isi['password'];?>" readonly>
         </div>
         <button type="submit" class="btn btn-primary" style= "width:100px;">Selesai</button>
     </form>
-    </div>
+</div>
 </body>
+</html>

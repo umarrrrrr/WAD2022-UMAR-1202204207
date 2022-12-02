@@ -14,7 +14,6 @@
     $query = mysqli_query($connect,"SELECT id_mobil FROM `showroom_umar_table`");
     $jumlah = mysqli_num_rows($query);
     $ambil = mysqli_query($connect, "SELECT * FROM `showroom_umar_table`");
-
   ?>
   <nav class="navbar navbar-expand-lg bg-primary">
   <div class="container-fluid">

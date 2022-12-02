@@ -1,3 +1,22 @@
+<?php
+  include '../config/connector.php';
+  $querry=mysqli_query($connect, "SELECT * FROM showroom_umar_table");
+  $jumlah=mysqli_num_rows($querry);
+  $ambil = mysqli_query($connect, "SELECT * FROM `showroom_umar_table`");
+  if ($jumlah==0){
+    $masuk="Add-Umar.php";
+  }
+  else{
+    $masuk="ListCar-Umar.php";
+  }
+session_start();
+if(!isset($_SESSION['email']))
+{
+  header("location:../pages/Login-Umar.php");
+}
+print_r($_SESSION)
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,30 +28,25 @@
     </style>
   </head>
   <body>
-
-  <?php
-    include('.\config\connector.php');
-    $query = mysqli_query($connect,"SELECT id_mobil FROM `showroom_umar_table`");
-    $jumlah = mysqli_num_rows($query);
-  ?>
-  <nav class="navbar navbar-expand-lg bg-primary">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse">
-      <div class="navbar-nav" style="padding-left: 100px;">
-        <a style="color: white;" class="nav-link active" aria-current="page" href="index.php">Home</a>
-        <?php
-          if ($jumlah == 0){
-              echo '<a class="nav-link" style="padding-left: 35px; color: white;"href="pages/Add-Umar.php">MyCar</a>';
-            }
-          else{
-              echo '<a class="nav-link" style="padding-left: 35px; color: white;" href="pages/ListCar-Umar.php">MyCar</a>';
-            }
-        ?>
-        <a class="nav-link" style="padding-left: 1000px; color: white;" href="pages/Login-Umar.php" role="button">Login</a>
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container-fluid px-5">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" style="padding-left:30px; padding-right:30px" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="padding-right:1030px";>MyCar</a>
+        <li>
+          <a class="nav-link active" aria-current="page" style="padding-left:30px; padding-right:30px" href="Profile-Umar.php">Profile</a></li>
+        <li>
+          <a class="nav-link active" aria-current="page" style="padding-left:30px; padding-right:30px" href="../config/logout.php">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
-  </nav>
+</nav>
 
   <div class="container" style="padding-top: 100px;">
     <div class="row">
@@ -54,15 +68,13 @@
               ?>
             </div>
             <div style="padding-top: 50px;">
-                <img src="asset/images/Logo.png" class="card-img-top" alt="Logo EAD" style="width: 100px">
+                <img src="../asset/images/Logo.png" class="card-img-top" alt="Logo EAD" style="width: 100px">
                 <a style="padding-left: 30px;">Umar_1202204207</a>
             </div>
         </div>
         <div class="col">
-            <img src="asset/images/avanza.png" alt="Toyota">
+            <img src="../asset/images/avanza.png" alt="Toyota">
         </div>       
   </div>
     </body>
 </html>
-
-
