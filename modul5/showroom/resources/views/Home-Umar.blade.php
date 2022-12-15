@@ -1,5 +1,5 @@
 <?php
-  include '/config/connector.php';
+  include './config/connector.php';
   $querry=mysqli_query($connect, "SELECT * FROM showroom_umar_table");
   $jumlah=mysqli_num_rows($querry);
   $ambil = mysqli_query($connect, "SELECT * FROM `showroom_umar_table`");
