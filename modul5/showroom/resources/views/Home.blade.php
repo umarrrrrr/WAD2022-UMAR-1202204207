@@ -14,14 +14,14 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" style="padding-left:30px; padding-right:30px" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" style="padding-left:30px; padding-right:30px" href="/">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/showroom" style="padding-right:1030px";>MyCar</a>
         <li>
-          <a class="nav-link active" aria-current="page" style="padding-left:30px; padding-right:30px" href="Profile-Umar.php">Profile</a></li>
+          <a class="nav-link active" aria-current="page" style="padding-left:30px; padding-right:30px" href="/showroom">Profile</a></li>
         <li>
-          <a class="nav-link active" aria-current="page" style="padding-left:30px; padding-right:30px" href="../config/logout.php">Log Out</a></li>
+          <a class="nav-link active" aria-current="page" style="padding-left:30px; padding-right:30px" href="/showroom">Log in</a></li>
           </ul>
         </li>
       </ul>

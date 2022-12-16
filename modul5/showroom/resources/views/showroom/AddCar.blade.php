@@ -10,28 +10,28 @@
   </head>
   <body>
 
-  <nav class="navbar navbar-expand-lg bg-primary">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse">
-      <div class="navbar-nav" style="padding-left: 100px;">
-        <a style="color: white;" class="nav-link active" aria-current="page" href="../index.php">Home</a>
-        <?php
-          if ($jumlah == 0){
-              echo '<a class="nav-link" style="padding-left: 35px; color: white;"href="Add-Umar.php">MyCar</a>';
-            }
-          else{
-              echo '<a class="nav-link" style="padding-left: 35px; color: white;" href="ListCar-Umar.php">MyCar</a>';
-            }
-        ?>
-      </div>
+  <nav class="navbar navbar-dark bg-primary  navbar-expand-lg sticky-top" style="background-color: #e9ecef;">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/showroom">Mycar</a>
+        </li>
+      </ul>
     </div>
-  </div>
+    </div>
   </nav>
    
   <div class="container" style="padding-top: 30px;">
       <h4>Tambah Mobil</h4>
       <a>Tambah Mobil Baru Anda Ke List Showroom</a>
-      
+      @csrf
       <div style="padding-top: 35px;">
           <form action="insert.php" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
