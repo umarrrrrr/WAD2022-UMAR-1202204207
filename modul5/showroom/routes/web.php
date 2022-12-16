@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\ShowroomtController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +15,6 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('Utama');
+    return view('Home');
 });
-Route::resource('product', ProductController::class);
+Route::resource('showroom', ShowroomtController::class);
